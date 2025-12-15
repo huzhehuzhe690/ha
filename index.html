@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人博客</title>
+   <!-- <link rel="stylesheet" type="text/css" href="1.css">
+   <link rel="stylesheet" type="text/css" href="2.js"> -->
+   <style>
+        body {
+            font-family: Arial, sans-serif; /* 设置字体 */
+            background-color: #e3f2fd; /* 设置背景颜色 */
+            margin: 0;
+            padding: 0;
+
+        }
+
+        /* 容器样式 */
+        .container {
+            display: flex; /* 使用flex布局 */
+            justify-content: space-between; /* 左右间距均匀分布 */
+            padding: 20px;
+
+        }
+
+        /* 侧边栏样式 */
+        .sidebar {
+            width: 20%; /* 侧边栏宽度 */
+            background-color: #ffffff; /* 背景颜色 */
+             background-image: url(3.webp);
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 添加阴影 */
+        }
+
+        /* 主内容区域样式 */
+        .main-content {
+            width: 75%; /* 主内容区域宽度 */
+            background-color: #ffffff; /* 背景颜色 */
+            background-image: url(3.webp);
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 添加阴影 */
+        }
+
+        /* 菜单项样式 */
+        .menu-item {
+            padding: 10px;
+            margin-bottom: 5px; /* 底部间距 */
+            background-color: #f1f1f1; /* 背景颜色 */
+
+            cursor: pointer; /* 鼠标悬停时显示手型 */
+            transition: background-color 0.3s; /* 背景颜色过渡效果 */
+        }
+
+        .menu-item:hover {
+            background-color: #e0e0e0; /* 鼠标悬停时背景颜色 */
+        }
+
+        /* 个人信息样式 */
+        .profile {
+            margin-bottom: 20px;
+        }
+
+        /* 百科样式 */
+        .qa {
+            margin-bottom: 20px;
+            background-image: url(4.webp);
+        }
+
+        /* 留言板样式 */
+        .message-board {
+            margin-bottom: 20px;
+            background-image: url(2.webp);
+        }
+
+        /* 表单样式 */
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box; /* 包括内边距和边框在内的总宽度和高度 */
+        }
+
+        /* 提交按钮样式 */
+        .submit-btn {
+            background-color: #4CAF50; /* 按钮背景颜色 */
+            color: white; /* 按钮文字颜色 */
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s; /* 背景颜色过渡效果 */
+        }
+
+        .submit-btn:hover {
+            background-color: #45a049; /* 鼠标悬停时按钮背景颜色 */
+        }
+   </style>
+   <script>
+       const form = document.getElementById('messageForm');
+
+        // 为表单添加提交事件监听器
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // 阻止表单默认提交行为
+
+            const name = document.getElementById('name').value;
+            const content = document.getElementById('content').value;
+
+            // 创建一个新的留言项
+            const messageItem = document.createElement('div');
+            messageItem.innerHTML = `<p>${name}：${content}</p>`;
+
+            // 将新的留言项添加到留言板中
+            document.querySelector('.message-board').appendChild(messageItem);
+
+            // 清空表单
+            document.getElementById('name').value = '';
+            document.getElementById('content').value = '';
+
+            alert('留言成功！');
+        });
+    
+   </script>
+<base target="_blank">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <!-- 侧边栏菜单 -->
+            <div class="menu-item">首页</div>
+            <div class="menu-item">我的作品</div>
+            <div class="menu-item">百科</div>
+            <div class="menu-item">留言板</div>
+        </div>
+        <div class="main-content">
+            <!-- 个人信息 -->
+            <div class="profile">
+                <h2>个人介绍</h2>
+                <p>姓名：胡吉</p>
+                <p>性别：男</p>
+                <p>班级：2023级大数据4班</p>
+                <p>学号：23170404016</p>
+            </div>
+
+            <!-- 百科 -->
+            <div class="qa">
+                <h2>百科</h2>
+                <ul>
+                    <li>面试官最爱通过这些面试题考核求职者</li>
+                    <li>奶茶店的水果茶可以放多久，奶茶没开封隔夜喝吗</li>
+                    <li>塑身贴减肥真的靠谱吗 塑身贴对身体真的有害吗</li>
+                </ul>
+            </div>
+
+            <!-- 留言板 -->
+            <div class="message-board">
+                <h2>留言</h2>
+                <div>
+                    <p>生活递来的包裹，有时轻盈有时沉重，但别急着拒签。打开它，用心拆解，你会发现酸涩里藏着耐人寻味的馈赠。我们无法决定生活的走向，但永远保有解释它的权力。人生如同登山，重要的不是登顶所有山峰，而是沿途收获的风景</p>
+                    <p>内心有光的人，并非总是一帆风顺，但他们总是心怀热爱、乐观向上，因此在他们眼中，生活便处处是阳光。</p>
+                    <p>有所期待，才能勇往无前；心怀热忱，方能乘风破浪。生活，从不会亏待心揣热爱的人。你只管保持热爱，向光而行，自会有水到渠成的惊喜。</p>
+                    <p>当你学会欣赏你自己，这个世界才会欣赏你。每个人都有自己的闪光点，都是独一无二的。千万不要看轻自己，而是要善于去发现自己的长处。</p>
+                    <p>不必着急，也不必忧虑，一站有一站的风景，一岁有一岁的收获。只要坚守住初心，看到自身的优势和不足，脚踏实地地默默耕耘，那些独自走过的路、那些缓慢笨拙的成长，都会让你变得丰富而坚强。</p>
+                    <p>别敷衍自己，也别辜负自己。忠于自己，本身就是一种强大的力量，也是最快的成长方式。一个人只有坚守住本心，大胆追随内心的渴望，方能活出属于自己的精彩。</p>
+                </div>
+            </div>
+
+            <!-- 留言板表单 -->
+            <div class="message-board">
+                <h2>留言板</h2>
+                <form id="messageForm">
+                    <div class="form-group">
+                        <label for="name">姓名：</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="content">内容：</label>
+                        <textarea id="content" name="content" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">提交</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
